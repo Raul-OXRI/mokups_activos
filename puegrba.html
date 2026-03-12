@@ -1,0 +1,586 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulario de Registro - Cooperativa</title>
+
+    <!-- DaisyUI -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <!-- Tailwind -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- Fontawesome -->
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v7.0.1/css/all.css"
+    />
+
+    <style>
+      /* Animaciones para los cuadrados */
+      @keyframes float1 {
+        0%, 100% {
+          transform: translateY(0) rotate(0deg) scale(1);
+        }
+        50% {
+          transform: translateY(-30px) rotate(10deg) scale(1.05);
+        }
+      }
+
+      @keyframes float2 {
+        0%, 100% {
+          transform: translateY(0) rotate(0deg) scale(1);
+        }
+        50% {
+          transform: translateY(20px) rotate(-15deg) scale(1.08);
+        }
+      }
+
+      @keyframes float3 {
+        0%, 100% {
+          transform: translateY(0) rotate(0deg) translateX(0);
+        }
+        50% {
+          transform: translateY(-25px) rotate(15deg) translateX(10px);
+        }
+      }
+
+      @keyframes float4 {
+        0%, 100% {
+          transform: translateY(0) rotate(0deg) scale(1);
+        }
+        50% {
+          transform: translateY(18px) rotate(-12deg) scale(1.06);
+        }
+      }
+
+      @keyframes float5 {
+        0%, 100% {
+          transform: translateY(0) rotate(0deg) translateX(0);
+        }
+        50% {
+          transform: translateY(-20px) rotate(20deg) translateX(15px);
+        }
+      }
+
+      @keyframes float6 {
+        0%, 100% {
+          transform: translateY(0) rotate(0deg);
+        }
+        50% {
+          transform: translateY(15px) rotate(-18deg);
+        }
+      }
+
+      @keyframes float7 {
+        0%, 100% {
+          transform: translateY(0) rotate(0deg) scale(1);
+        }
+        50% {
+          transform: translateY(-18px) rotate(12deg) scale(1.04);
+        }
+      }
+
+      @keyframes floatMini {
+        0%, 100% {
+          transform: translateY(0) rotate(0deg);
+          opacity: 0.3;
+        }
+        50% {
+          transform: translateY(-20px) rotate(180deg);
+          opacity: 0.6;
+        }
+      }
+
+      .square-1 { animation: float1 8s ease-in-out infinite; }
+      .square-2 { animation: float2 7s ease-in-out infinite 0.5s; }
+      .square-3 { animation: float3 9s ease-in-out infinite 1s; }
+      .square-4 { animation: float4 6.5s ease-in-out infinite 1.5s; }
+      .square-5 { animation: float5 5s ease-in-out infinite 2s; }
+      .square-6 { animation: float6 6s ease-in-out infinite 2.5s; }
+      .square-7 { animation: float7 7.5s ease-in-out infinite 3s; }
+
+      .mini-square-1 { animation: floatMini 10s ease-in-out infinite 0s; }
+      .mini-square-2 { animation: floatMini 11s ease-in-out infinite 0.5s; }
+      .mini-square-3 { animation: floatMini 12s ease-in-out infinite 1s; }
+      .mini-square-4 { animation: floatMini 13s ease-in-out infinite 1.5s; }
+      .mini-square-5 { animation: floatMini 14s ease-in-out infinite 2s; }
+      .mini-square-6 { animation: floatMini 15s ease-in-out infinite 2.5s; }
+      .mini-square-7 { animation: floatMini 16s ease-in-out infinite 3s; }
+      .mini-square-8 { animation: floatMini 17s ease-in-out infinite 3.5s; }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes fadeInDown {
+        from {
+          opacity: 0;
+          transform: translateY(-20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .form-container {
+        animation: fadeIn 0.6s ease-out;
+      }
+
+      .form-header {
+        animation: fadeInDown 0.6s ease-out 0.2s backwards;
+      }
+
+      .form-footer {
+        animation: fadeIn 0.6s ease-out 0.4s backwards;
+      }
+
+      /* Estilos de relieve para cuadrados */
+      .square {
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+      }
+
+      .square-mini {
+        backdrop-filter: blur(6px);
+        -webkit-backdrop-filter: blur(6px);
+      }
+
+      /* Grid pattern */
+      .grid-pattern {
+        background-image: 
+          linear-gradient(to right, #1e40af 1px, transparent 1px),
+          linear-gradient(to bottom, #1e40af 1px, transparent 1px);
+        background-size: 60px 60px;
+      }
+    </style>
+  </head>
+  <body class="min-h-screen relative overflow-hidden flex items-center justify-center p-4">
+    <!-- Fondo con relieve y cuadrados dinámicos -->
+    <div class="absolute inset-0 bg-gradient-to-br from-slate-100 via-blue-50 to-indigo-100">
+      <!-- Capa de fondo con gradiente suave -->
+      <div class="absolute inset-0 bg-gradient-radial from-blue-200/40 via-transparent to-purple-200/40"></div>
+      
+      <!-- Cuadrados animados grandes -->
+      <div class="square square-1 absolute w-40 h-40 bg-gradient-to-br from-blue-400/20 to-blue-600/30 rounded-2xl" 
+           style="top: 10%; left: 5%; box-shadow: 0 20px 60px rgba(59, 130, 246, 0.3), inset -5px -5px 15px rgba(0, 0, 0, 0.1), inset 5px 5px 15px rgba(255, 255, 255, 0.8);"></div>
+
+      <div class="square square-2 absolute w-32 h-32 bg-gradient-to-br from-purple-400/20 to-purple-600/30 rounded-2xl" 
+           style="top: 60%; left: 10%; box-shadow: 0 15px 50px rgba(147, 51, 234, 0.3), inset -5px -5px 15px rgba(0, 0, 0, 0.1), inset 5px 5px 15px rgba(255, 255, 255, 0.8);"></div>
+
+      <div class="square square-3 absolute w-48 h-48 bg-gradient-to-br from-indigo-400/20 to-indigo-600/30 rounded-3xl" 
+           style="top: 15%; right: 8%; box-shadow: 0 25px 70px rgba(99, 102, 241, 0.3), inset -6px -6px 18px rgba(0, 0, 0, 0.1), inset 6px 6px 18px rgba(255, 255, 255, 0.8);"></div>
+
+      <div class="square square-4 absolute w-36 h-36 bg-gradient-to-br from-cyan-400/20 to-cyan-600/30 rounded-2xl" 
+           style="bottom: 15%; right: 15%; box-shadow: 0 18px 55px rgba(6, 182, 212, 0.3), inset -5px -5px 15px rgba(0, 0, 0, 0.1), inset 5px 5px 15px rgba(255, 255, 255, 0.8);"></div>
+
+      <!-- Cuadrados pequeños flotantes -->
+      <div class="square square-5 absolute w-20 h-20 bg-gradient-to-br from-pink-400/25 to-pink-600/35 rounded-xl" 
+           style="top: 40%; left: 15%; box-shadow: 0 12px 40px rgba(236, 72, 153, 0.3), inset -4px -4px 12px rgba(0, 0, 0, 0.1), inset 4px 4px 12px rgba(255, 255, 255, 0.8);"></div>
+
+      <div class="square square-6 absolute w-24 h-24 bg-gradient-to-br from-violet-400/25 to-violet-600/35 rounded-xl" 
+           style="top: 70%; right: 40%; box-shadow: 0 14px 45px rgba(139, 92, 246, 0.3), inset -4px -4px 12px rgba(0, 0, 0, 0.1), inset 4px 4px 12px rgba(255, 255, 255, 0.8);"></div>
+
+      <div class="square square-7 absolute w-28 h-28 bg-gradient-to-br from-sky-400/25 to-sky-600/35 rounded-2xl" 
+           style="top: 30%; right: 25%; box-shadow: 0 16px 48px rgba(14, 165, 233, 0.3), inset -5px -5px 14px rgba(0, 0, 0, 0.1), inset 5px 5px 14px rgba(255, 255, 255, 0.8);"></div>
+
+      <!-- Cuadrados mini decorativos -->
+      <div class="square-mini mini-square-1 absolute w-12 h-12 bg-gradient-to-br from-blue-300/15 to-purple-300/25 rounded-lg" 
+           style="top: 15%; left: 5%; box-shadow: 0 8px 25px rgba(99, 102, 241, 0.2), inset -3px -3px 8px rgba(0, 0, 0, 0.08), inset 3px 3px 8px rgba(255, 255, 255, 0.7);"></div>
+
+      <div class="square-mini mini-square-2 absolute w-12 h-12 bg-gradient-to-br from-blue-300/15 to-purple-300/25 rounded-lg" 
+           style="top: 25%; left: 16%; box-shadow: 0 8px 25px rgba(99, 102, 241, 0.2), inset -3px -3px 8px rgba(0, 0, 0, 0.08), inset 3px 3px 8px rgba(255, 255, 255, 0.7);"></div>
+
+      <div class="square-mini mini-square-3 absolute w-12 h-12 bg-gradient-to-br from-blue-300/15 to-purple-300/25 rounded-lg" 
+           style="top: 35%; left: 27%; box-shadow: 0 8px 25px rgba(99, 102, 241, 0.2), inset -3px -3px 8px rgba(0, 0, 0, 0.08), inset 3px 3px 8px rgba(255, 255, 255, 0.7);"></div>
+
+      <div class="square-mini mini-square-4 absolute w-12 h-12 bg-gradient-to-br from-blue-300/15 to-purple-300/25 rounded-lg" 
+           style="top: 45%; left: 38%; box-shadow: 0 8px 25px rgba(99, 102, 241, 0.2), inset -3px -3px 8px rgba(0, 0, 0, 0.08), inset 3px 3px 8px rgba(255, 255, 255, 0.7);"></div>
+
+      <div class="square-mini mini-square-5 absolute w-12 h-12 bg-gradient-to-br from-blue-300/15 to-purple-300/25 rounded-lg" 
+           style="top: 55%; left: 49%; box-shadow: 0 8px 25px rgba(99, 102, 241, 0.2), inset -3px -3px 8px rgba(0, 0, 0, 0.08), inset 3px 3px 8px rgba(255, 255, 255, 0.7);"></div>
+
+      <div class="square-mini mini-square-6 absolute w-12 h-12 bg-gradient-to-br from-blue-300/15 to-purple-300/25 rounded-lg" 
+           style="top: 65%; left: 60%; box-shadow: 0 8px 25px rgba(99, 102, 241, 0.2), inset -3px -3px 8px rgba(0, 0, 0, 0.08), inset 3px 3px 8px rgba(255, 255, 255, 0.7);"></div>
+
+      <div class="square-mini mini-square-7 absolute w-12 h-12 bg-gradient-to-br from-blue-300/15 to-purple-300/25 rounded-lg" 
+           style="top: 75%; left: 71%; box-shadow: 0 8px 25px rgba(99, 102, 241, 0.2), inset -3px -3px 8px rgba(0, 0, 0, 0.08), inset 3px 3px 8px rgba(255, 255, 255, 0.7);"></div>
+
+      <div class="square-mini mini-square-8 absolute w-12 h-12 bg-gradient-to-br from-blue-300/15 to-purple-300/25 rounded-lg" 
+           style="top: 85%; left: 82%; box-shadow: 0 8px 25px rgba(99, 102, 241, 0.2), inset -3px -3px 8px rgba(0, 0, 0, 0.08), inset 3px 3px 8px rgba(255, 255, 255, 0.7);"></div>
+
+      <!-- Patrón de cuadrícula con relieve -->
+      <div class="absolute inset-0 opacity-[0.02] grid-pattern"></div>
+
+      <!-- Efecto de luz superior -->
+      <div class="absolute top-0 left-0 right-0 h-96 bg-gradient-to-b from-white/40 to-transparent pointer-events-none"></div>
+    </div>
+
+    <!-- Contenido del formulario -->
+    <div class="form-container relative z-10 w-full max-w-md">
+      <div class="card bg-base-100 shadow-2xl backdrop-blur-sm bg-white/95" 
+           style="box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(255, 255, 255, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.9);">
+        <div class="card-body p-8">
+          <!-- Header del formulario -->
+          <div class="form-header text-center mb-6">
+            <h2 class="text-3xl mb-2 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent font-bold">
+              Registro de Visita
+            </h2>
+            <p class="text-base-content/70">Complete el formulario para agendar su visita</p>
+          </div>
+
+          <form id="visitForm">
+            <fieldset class="space-y-4">
+              <!-- Nombres -->
+              <div class="form-control">
+                <label class="label">
+                  <span class="label-text flex items-center gap-2">
+                    <i class="fa-duotone fa-solid fa-user text-blue-600"></i>
+                    Nombres
+                  </span>
+                </label>
+                <input
+                  type="text"
+                  id="nombres"
+                  name="nombres"
+                  class="input input-bordered w-full transition-all duration-300 focus:input-primary"
+                  placeholder="Juan Carlos"
+                  required
+                  minlength="2"
+                />
+                <label class="label error-message" id="nombres-error" style="display: none;">
+                  <span class="label-text-alt text-error flex items-center gap-1">
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                    <span class="error-text"></span>
+                  </span>
+                </label>
+              </div>
+
+              <!-- Apellidos -->
+              <div class="form-control">
+                <label class="label">
+                  <span class="label-text flex items-center gap-2">
+                    <i class="fa-duotone fa-solid fa-user-tag text-blue-600"></i>
+                    Apellidos
+                  </span>
+                </label>
+                <input
+                  type="text"
+                  id="apellidos"
+                  name="apellidos"
+                  class="input input-bordered w-full transition-all duration-300 focus:input-primary"
+                  placeholder="Pérez Xol"
+                  required
+                  minlength="2"
+                />
+                <label class="label error-message" id="apellidos-error" style="display: none;">
+                  <span class="label-text-alt text-error flex items-center gap-1">
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                    <span class="error-text"></span>
+                  </span>
+                </label>
+              </div>
+
+              <!-- Teléfono -->
+              <div class="form-control">
+                <label class="label">
+                  <span class="label-text flex items-center gap-2">
+                    <i class="fa-duotone fa-solid fa-phone text-blue-600"></i>
+                    Número de teléfono
+                  </span>
+                </label>
+                <input
+                  type="tel"
+                  id="telefono"
+                  name="telefono"
+                  class="input input-bordered w-full transition-all duration-300 focus:input-primary"
+                  placeholder="+502 4444-8888"
+                  required
+                />
+                <label class="label error-message" id="telefono-error" style="display: none;">
+                  <span class="label-text-alt text-error flex items-center gap-1">
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                    <span class="error-text"></span>
+                  </span>
+                </label>
+              </div>
+
+              <!-- DPI -->
+              <div class="form-control">
+                <label class="label">
+                  <span class="label-text flex items-center gap-2">
+                    <i class="fa-duotone fa-solid fa-id-card text-blue-600"></i>
+                    DPI
+                  </span>
+                </label>
+                <input
+                  type="text"
+                  id="dpi"
+                  name="dpi"
+                  class="input input-bordered w-full transition-all duration-300 focus:input-primary"
+                  placeholder="0000-00000-0000"
+                  required
+                />
+                <label class="label error-message" id="dpi-error" style="display: none;">
+                  <span class="label-text-alt text-error flex items-center gap-1">
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                    <span class="error-text"></span>
+                  </span>
+                </label>
+              </div>
+
+              <!-- Email -->
+              <div class="form-control">
+                <label class="label">
+                  <span class="label-text flex items-center gap-2">
+                    <i class="fa-duotone fa-solid fa-envelope text-blue-600"></i>
+                    Correo electrónico
+                  </span>
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  class="input input-bordered w-full transition-all duration-300 focus:input-primary"
+                  placeholder="cooperativa@gmail.com"
+                  required
+                />
+                <label class="label error-message" id="email-error" style="display: none;">
+                  <span class="label-text-alt text-error flex items-center gap-1">
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                    <span class="error-text"></span>
+                  </span>
+                </label>
+              </div>
+
+              <!-- Fecha de visita -->
+              <div class="form-control">
+                <label class="label">
+                  <span class="label-text flex items-center gap-2">
+                    <i class="fa-duotone fa-solid fa-calendar-days text-blue-600"></i>
+                    Fecha tentativa de visita
+                  </span>
+                </label>
+                <input
+                  type="date"
+                  id="fechaVisita"
+                  name="fechaVisita"
+                  class="input input-bordered w-full transition-all duration-300 focus:input-primary"
+                  required
+                />
+                <label class="label error-message" id="fechaVisita-error" style="display: none;">
+                  <span class="label-text-alt text-error flex items-center gap-1">
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                    <span class="error-text"></span>
+                  </span>
+                </label>
+              </div>
+
+              <!-- Botones -->
+              <div class="flex gap-4 mt-6 pt-4 border-t border-base-300">
+                <button
+                  type="button"
+                  onclick="window.history.back()"
+                  class="btn btn-outline flex-1 rounded-xl transition-transform hover:scale-105 active:scale-95"
+                >
+                  <i class="fa-duotone fa-solid fa-arrow-left"></i>
+                  Regresar
+                </button>
+                <button
+                  type="submit"
+                  id="submitBtn"
+                  class="btn btn-success flex-1 rounded-xl text-white transition-transform hover:scale-105 active:scale-95"
+                >
+                  <i class="fa-duotone fa-solid fa-paper-plane"></i>
+                  Registrarse
+                </button>
+              </div>
+            </fieldset>
+          </form>
+        </div>
+      </div>
+
+      <!-- Texto adicional -->
+      <div class="form-footer text-center mt-6">
+        <p class="text-base-content/60 text-sm backdrop-blur-sm bg-white/50 inline-block px-4 py-2 rounded-full shadow-sm">
+          <i class="fa-duotone fa-solid fa-shield-check text-success mr-2"></i>
+          Su información está protegida
+        </p>
+      </div>
+    </div>
+
+    <!-- Toast Container -->
+    <div id="toastContainer" class="toast toast-top toast-center z-50"></div>
+
+    <script>
+      // Validación del formulario
+      const form = document.getElementById('visitForm');
+      const submitBtn = document.getElementById('submitBtn');
+
+      // Función para mostrar error
+      function showError(fieldId, message) {
+        const errorLabel = document.getElementById(fieldId + '-error');
+        const input = document.getElementById(fieldId);
+        if (errorLabel && input) {
+          errorLabel.style.display = 'block';
+          errorLabel.querySelector('.error-text').textContent = message;
+          input.classList.add('input-error');
+          input.classList.remove('input-success');
+        }
+      }
+
+      // Función para ocultar error
+      function hideError(fieldId) {
+        const errorLabel = document.getElementById(fieldId + '-error');
+        const input = document.getElementById(fieldId);
+        if (errorLabel && input) {
+          errorLabel.style.display = 'none';
+          input.classList.remove('input-error');
+          input.classList.add('input-success');
+        }
+      }
+
+      // Función para mostrar toast
+      function showToast(message, type = 'success') {
+        const toastContainer = document.getElementById('toastContainer');
+        const toast = document.createElement('div');
+        toast.className = `alert alert-${type} shadow-lg`;
+        toast.innerHTML = `
+          <div>
+            <i class="fa-solid fa-${type === 'success' ? 'check-circle' : 'exclamation-circle'}"></i>
+            <span>${message}</span>
+          </div>
+        `;
+        toastContainer.appendChild(toast);
+        
+        setTimeout(() => {
+          toast.remove();
+        }, 3000);
+      }
+
+      // Validación en tiempo real
+      form.querySelectorAll('input').forEach(input => {
+        input.addEventListener('input', function() {
+          validateField(this);
+        });
+
+        input.addEventListener('blur', function() {
+          validateField(this);
+        });
+      });
+
+      // Validar campo individual
+      function validateField(input) {
+        const fieldId = input.id;
+        const value = input.value.trim();
+
+        // Limpiar error previo
+        hideError(fieldId);
+
+        // Validaciones específicas
+        if (fieldId === 'nombres' || fieldId === 'apellidos') {
+          if (value.length < 2) {
+            showError(fieldId, 'Debe tener al menos 2 caracteres');
+            return false;
+          }
+        }
+
+        if (fieldId === 'telefono') {
+          const phoneRegex = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3,4}[-\s\.]?[0-9]{4}$/;
+          if (!phoneRegex.test(value)) {
+            showError(fieldId, 'Formato de teléfono inválido');
+            return false;
+          }
+        }
+
+        if (fieldId === 'dpi') {
+          const dpiRegex = /^\d{4}-?\d{5}-?\d{4}$/;
+          if (!dpiRegex.test(value)) {
+            showError(fieldId, 'Formato de DPI inválido (0000-00000-0000)');
+            return false;
+          }
+        }
+
+        if (fieldId === 'email') {
+          const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
+          if (!emailRegex.test(value)) {
+            showError(fieldId, 'Correo electrónico inválido');
+            return false;
+          }
+        }
+
+        if (fieldId === 'fechaVisita') {
+          const selectedDate = new Date(value);
+          const today = new Date();
+          today.setHours(0, 0, 0, 0);
+          if (selectedDate < today) {
+            showError(fieldId, 'La fecha debe ser hoy o posterior');
+            return false;
+          }
+        }
+
+        return true;
+      }
+
+      // Submit del formulario
+      form.addEventListener('submit', async function(e) {
+        e.preventDefault();
+
+        // Validar todos los campos
+        let isValid = true;
+        form.querySelectorAll('input').forEach(input => {
+          if (!validateField(input)) {
+            isValid = false;
+          }
+        });
+
+        if (!isValid) {
+          showToast('Por favor corrija los errores en el formulario', 'error');
+          return;
+        }
+
+        // Simular envío
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<span class="loading loading-spinner"></span> Enviando...';
+
+        // Obtener datos del formulario
+        const formData = new FormData(form);
+        const data = Object.fromEntries(formData);
+        
+        console.log('Datos del formulario:', data);
+
+        // Simular delay de envío
+        await new Promise(resolve => setTimeout(resolve, 1500));
+
+        // Mostrar éxito
+        showToast('¡Registro exitoso! Tu solicitud de visita ha sido registrada correctamente.', 'success');
+
+        // Resetear formulario
+        form.reset();
+        form.querySelectorAll('input').forEach(input => {
+          input.classList.remove('input-success', 'input-error');
+        });
+
+        // Restaurar botón
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = '<i class="fa-duotone fa-solid fa-paper-plane"></i> Registrarse';
+      });
+
+      // Establecer fecha mínima de hoy
+      document.getElementById('fechaVisita').setAttribute('min', new Date().toISOString().split('T')[0]);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,1213 @@
+<!doctype html>
+<html lang="en" data-theme="corporate">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Activos extraordinarios</title>
+
+    <!-- DaisyUI -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <!-- Tailwind -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- Fontawesome -->
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v7.0.1/css/all.css"
+    />
+    <style>
+      .gallery-img {
+        transition: transform 0.5s ease;
+      }
+      .gallery-item:hover .gallery-img {
+        transform: scale(1.1);
+      }
+      .gallery-overlay {
+        transition: opacity 0.3s ease;
+      }
+      .gallery-item:hover .gallery-overlay {
+        opacity: 1;
+      }
+    </style>
+  </head>
+
+  <body class="p-6">
+    <h1 class="text-3xl font-bold mb-6">Activos extraordinarios</h1>
+    <div
+      class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 px-4 place-items-center"
+    >
+      <div>
+        <div class="px-4">
+          <div class="card lg:card-side bg-base-100 shadow-xl">
+            <!-- INFORMACION -->
+            <div class="card-body lg:w-1/2">
+              <h2 class="card-title text-2xl">Barrio La Providencia</h2>
+              <p class="text-[12px] text-blue-800 font-bold">
+                Cobán, Alta Verapaz
+              </p>
+              <div class="grid grid-cols-1 gap-6 mt-4">
+                <div class="gap-1 items-center lg:flex">
+                  <label class="font-medium flex items-center gap-2">
+                    <i class="fa-solid fa-map-pin"></i>
+                    <span class="font-medium">Dirección:</span>
+                  </label>
+                  <span>4ta calle 12-09 zona 1</span>
+                  <div class="tooltip tooltip-right" data-tip="Ver en mapa">
+                    <a
+                      href="https://www.google.com/maps/place/El+Rancho/@14.9255099,-90.0569419,13z/data=!3m1!4b1!4m6!3m5!1s0x8589fde8f2082329:0xcc9504a8655e2b6a!8m2!3d14.9254309!4d-90.0157422!16s%2Fg%2F11khk42w_2?entry=ttu"
+                      target="_blank"
+                    >
+                      <i class="fa-solid fa-map-location"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 gap-6 mt-4">
+                <div class="gap-1 items-center lg:flex">
+                  <label class="font-medium flex items-center gap-2">
+                    <i class="fa-regular fa-bars-sort"></i>
+                    Acceso:
+                  </label>
+                  <p class="text-sm">
+                    Acceso pavimentado, con transporte público cercano
+                  </p>
+                </div>
+
+                <div class="gap-2 items-center lg:flex">
+                  <label class="font-medium flex items-center gap-2">
+                    <i class="fa-solid fa-ruler-combined"></i>
+                    Metros cuadrados:
+                  </label>
+                  <p class="font-bold text-lg">42 m²</p>
+                </div>
+                <div class="items-center gap-1 lg:flex">
+                  <label class="font-medium flex items-center gap-2">
+                    <i class="fa-regular fa-coins"></i>
+                    Precio:
+                  </label>
+                  <span class="text-green-500 font-bold text-xl">Q150,000</span>
+                  <span class="text-[10px] font-bold">(Negociable)</span>
+                </div>
+              </div>
+              <div class="flex items-center gap-3">
+                <a
+                  href="./form.html"
+                  class="btn bg-blue-700 rounded-xl text-white"
+                >
+                  Me interesa
+                </a>
+
+                <div class="tooltip tooltip-right" data-tip="Requisitos">
+                  <button
+                    class="relative text-gray-500 hover:text-gray-700 transition"
+                    aria-label="Requisitos para adquirir este activo"
+                    onclick="document.getElementById('info_modal').showModal()"
+                  >
+                    <i class="fa-sharp fa-solid fa-registered text-xl"></i>
+                  </button>
+                </div>
+              </div>
+              <!-- boton para mostar requisitos -->
+
+              <dialog id="info_modal" class="modal">
+                <div class="modal-box">
+                  <h3 class="font-bold text-lg">
+                    Requisitos para adquirir este activo
+                  </h3>
+                  <ul class="list-disc list-inside mt-4">
+                    <li>Ser mayor de edad</li>
+                    <li>Presentar documento de identidad vigente</li>
+                    <li>Demostrar capacidad financiera para la compra</li>
+                    <li>Firmar contrato de compraventa</li>
+                  </ul>
+                  <div class="modal-action">
+                    <form method="dialog">
+                      <button class="btn">Cerrar</button>
+                    </form>
+                  </div>
+                </div>
+                <form method="dialog" class="modal-backdrop">
+                  <button>Cerrar</button>
+                </form>
+              </dialog>
+            </div>
+
+            <div class="lg:w-1/2 p-4">
+              <!-- Galería Grid -->
+              <div class="max-w-xs mx-auto">
+                <div class="grid grid-cols-2 gap-3">
+                  <!-- Imagen 1 -->
+                  <div
+                    class="gallery-item relative group cursor-pointer overflow-hidden rounded-xl aspect-square shadow-lg hover:shadow-2xl transition-shadow duration-300"
+                    onclick="openModal(0)"
+                  >
+                    <img
+                      src="./img/terreno1/imagen1.jpeg"
+                      alt="Imagen 1"
+                      class="gallery-img w-full h-full object-cover"
+                    />
+                    <div
+                      class="gallery-overlay absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 flex items-center justify-center group-hover:opacity-100 transition"
+                    >
+                      <div
+                        class="bg-white/20 backdrop-blur-sm rounded-full p-3"
+                      >
+                        <i class="fas fa-expand text-white text-lg"></i>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Imagen 2 -->
+                  <div
+                    class="gallery-item relative group cursor-pointer overflow-hidden rounded-xl aspect-square shadow-lg hover:shadow-2xl transition-shadow duration-300"
+                    onclick="openModal(1)"
+                  >
+                    <img
+                      src="./img/terreno1/imagen2.jpeg"
+                      alt="Imagen 2"
+                      class="gallery-img w-full h-full object-cover"
+                    />
+                    <div
+                      class="gallery-overlay absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 flex items-center justify-center group-hover:opacity-100 transition"
+                    >
+                      <div
+                        class="bg-white/20 backdrop-blur-sm rounded-full p-3"
+                      >
+                        <i class="fas fa-expand text-white text-lg"></i>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Imagen 3 -->
+                  <div
+                    class="gallery-item relative group cursor-pointer overflow-hidden rounded-xl aspect-square shadow-lg hover:shadow-2xl transition-shadow duration-300"
+                    onclick="openModal(2)"
+                  >
+                    <img
+                      src="./img/terreno1/imagen3.jpeg"
+                      alt="Imagen 3"
+                      class="gallery-img w-full h-full object-cover"
+                    />
+                    <div
+                      class="gallery-overlay absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 flex items-center justify-center group-hover:opacity-100 transition"
+                    >
+                      <div
+                        class="bg-white/20 backdrop-blur-sm rounded-full p-3"
+                      >
+                        <i class="fas fa-expand text-white text-lg"></i>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Imagen 4 -->
+                  <div
+                    class="gallery-item relative group cursor-pointer overflow-hidden rounded-xl aspect-square shadow-lg hover:shadow-2xl transition-shadow duration-300"
+                    onclick="openModal(3)"
+                  >
+                    <img
+                      src="./img/terreno1/imagen4.jpeg"
+                      alt="Imagen 4"
+                      class="gallery-img w-full h-full object-cover"
+                    />
+                    <div
+                      class="absolute inset-0 bg-black/70 backdrop-blur-sm flex flex-col items-center justify-center"
+                    >
+                      <i class="fas fa-images text-white text-lg mb-2"></i>
+                      <span class="text-white font-semibold text-sm">
+                        Ver todas las fotos
+                      </span>
+                      <span class="text-white/90 text-xs mt-1">
+                        5 imágenes
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Modal Lightbox -->
+            <dialog
+              id="lightbox_modal"
+              class="modal modal-bottom sm:modal-middle"
+            >
+              <div class="modal-box max-w-7xl w-full bg-base-900 p-0 relative">
+                <!-- Header con contador y botón cerrar -->
+                <div
+                  class="absolute top-4 left-0 right-0 z-50 flex justify-between items-center px-6"
+                >
+                  <div
+                    class="badge badge-lg bg-base-100/20 backdrop-blur-md border-0 text-white font-semibold"
+                  >
+                    <span id="current-image">1</span> /
+                    <span id="total-images">5</span>
+                  </div>
+                  <form method="dialog">
+                    <button
+                      class="btn btn-circle btn-ghost bg-base-100/20 backdrop-blur-md hover:bg-base-100/30 border-0"
+                    >
+                      <i class="fas fa-times text-white text-xl"></i>
+                    </button>
+                  </form>
+                </div>
+
+                <!-- Imagen principal -->
+                <div
+                  class="relative flex items-center justify-center bg-black min-h-[70vh] p-4"
+                >
+                  <img
+                    id="modal-image"
+                    src=""
+                    alt="Imagen"
+                    class="max-w-full max-h-[80vh] object-contain rounded-lg shadow-2xl"
+                  />
+
+                  <!-- Botones de navegación -->
+                  <button
+                    onclick="previousImage()"
+                    class="btn btn-circle absolute left-4 bg-base-100/20 backdrop-blur-md hover:bg-base-100/30 border-0"
+                  >
+                    <i class="fas fa-chevron-left text-white text-xl"></i>
+                  </button>
+
+                  <button
+                    onclick="nextImage()"
+                    class="btn btn-circle absolute right-4 bg-base-100/20 backdrop-blur-md hover:bg-base-100/30 border-0"
+                  >
+                    <i class="fas fa-chevron-right text-white text-xl"></i>
+                  </button>
+                </div>
+                <!-- Miniaturas -->
+              </div>
+
+              <!-- Backdrop -->
+              <form method="dialog" class="modal-backdrop bg-black/90">
+                <button>cerrar</button>
+              </form>
+            </dialog>
+
+            <script>
+              // Array de imágenes
+              const images = [
+                "./img//terreno1/imagen1.jpeg",
+                "./img//terreno1/imagen2.jpeg",
+                "./img//terreno1/imagen3.jpeg",
+                "./img//terreno1/imagen4.jpeg",
+                "./img//terreno1/imagen5.jpeg",
+              ];
+
+              let currentIndex = 0;
+
+              // Generar miniaturas al cargar
+              window.addEventListener("DOMContentLoaded", function () {
+                const thumbnailsContainer =
+                  document.getElementById("thumbnails");
+                document.getElementById("total-images").textContent =
+                  images.length;
+
+                images.forEach((img, index) => {
+                  const thumb = document.createElement("div");
+                  thumb.className =
+                    "thumbnail cursor-pointer rounded-lg overflow-hidden transition-all duration-300 hover:scale-110";
+                  thumb.innerHTML = `
+                    <img src="${img}" 
+                         alt="Miniatura ${index + 1}" 
+                         class="w-16 h-16 object-cover"
+                         onclick="goToImage(${index})">
+                `;
+                  thumbnailsContainer.appendChild(thumb);
+                });
+              });
+
+              // Abrir modal
+              function openModal(index) {
+                currentIndex = index;
+                updateImage();
+                document.getElementById("lightbox_modal").showModal();
+              }
+
+              // Actualizar imagen
+              function updateImage() {
+                document.getElementById("modal-image").src =
+                  images[currentIndex];
+                document.getElementById("current-image").textContent =
+                  currentIndex + 1;
+
+                // Actualizar estado de miniaturas
+                const thumbnails = document.querySelectorAll(".thumbnail");
+                thumbnails.forEach((thumb, index) => {
+                  if (index === currentIndex) {
+                    thumb.classList.add("ring-2", "ring-primary", "scale-110");
+                  } else {
+                    thumb.classList.remove(
+                      "ring-2",
+                      "ring-primary",
+                      "scale-110",
+                    );
+                  }
+                });
+              }
+
+              // Siguiente imagen
+              function nextImage() {
+                currentIndex = (currentIndex + 1) % images.length;
+                updateImage();
+              }
+
+              // Imagen anterior
+              function previousImage() {
+                currentIndex =
+                  (currentIndex - 1 + images.length) % images.length;
+                updateImage();
+              }
+
+              // Ir a imagen específica
+              function goToImage(index) {
+                currentIndex = index;
+                updateImage();
+              }
+
+              // Navegación con teclado
+              document.addEventListener("keydown", function (e) {
+                const modal = document.getElementById("lightbox_modal");
+                if (modal.open) {
+                  if (e.key === "ArrowRight") nextImage();
+                  if (e.key === "ArrowLeft") previousImage();
+                  if (e.key === "Escape") modal.close();
+                }
+              });
+            </script>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="px-4">
+          <div class="card lg:card-side bg-base-100 shadow-xl">
+            <!-- INFORMACION -->
+            <div class="card-body lg:w-1/2">
+              <h2 class="card-title text-2xl">Barrio La Providencia</h2>
+              <p class="text-[12px] text-blue-800 font-bold">
+                Cobán, Alta Verapaz
+              </p>
+              <div class="grid grid-cols-1 gap-6 mt-4">
+                <div class="gap-1 items-center lg:flex">
+                  <label class="font-medium flex items-center gap-2">
+                    <i class="fa-solid fa-map-pin"></i>
+                    <span class="font-medium">Dirección:</span>
+                  </label>
+                  <span>4ta calle 12-09 zona 1</span>
+                  <div class="tooltip tooltip-right" data-tip="Ver en mapa">
+                    <a
+                      href="https://www.google.com/maps/place/El+Rancho/@14.9255099,-90.0569419,13z/data=!3m1!4b1!4m6!3m5!1s0x8589fde8f2082329:0xcc9504a8655e2b6a!8m2!3d14.9254309!4d-90.0157422!16s%2Fg%2F11khk42w_2?entry=ttu"
+                      target="_blank"
+                    >
+                      <i class="fa-solid fa-map-location"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 gap-6 mt-4">
+                <div class="gap-1 items-center lg:flex">
+                  <label class="font-medium flex items-center gap-2">
+                    <i class="fa-regular fa-bars-sort"></i>
+                    Acceso:
+                  </label>
+                  <p class="text-sm">
+                    Acceso pavimentado, con transporte público cercano
+                  </p>
+                </div>
+
+                <div class="gap-2 items-center lg:flex">
+                  <label class="font-medium flex items-center gap-2">
+                    <i class="fa-solid fa-ruler-combined"></i>
+                    Metros cuadrados:
+                  </label>
+                  <p class="font-bold text-lg">42 m²</p>
+                </div>
+                <div class="items-center gap-1 lg:flex">
+                  <label class="font-medium flex items-center gap-2">
+                    <i class="fa-regular fa-coins"></i>
+                    Precio:
+                  </label>
+                  <span class="text-green-500 font-bold text-xl">Q150,000</span>
+                  <span class="text-[10px] font-bold">(Negociable)</span>
+                </div>
+              </div>
+              <div class="flex items-center gap-3">
+                <a
+                  href="./form.html"
+                  class="btn bg-blue-700 rounded-xl text-white"
+                >
+                  Me interesa
+                </a>
+
+                <div class="tooltip tooltip-right" data-tip="Requisitos">
+                  <button
+                    class="relative text-gray-500 hover:text-gray-700 transition"
+                    aria-label="Requisitos para adquirir este activo"
+                    onclick="document.getElementById('info_modal').showModal()"
+                  >
+                    <i class="fa-sharp fa-solid fa-registered text-xl"></i>
+                  </button>
+                </div>
+              </div>
+              <!-- boton para mostar requisitos -->
+
+              <dialog id="info_modal" class="modal">
+                <div class="modal-box">
+                  <h3 class="font-bold text-lg">
+                    Requisitos para adquirir este activo
+                  </h3>
+                  <ul class="list-disc list-inside mt-4">
+                    <li>Ser mayor de edad</li>
+                    <li>Presentar documento de identidad vigente</li>
+                    <li>Demostrar capacidad financiera para la compra</li>
+                    <li>Firmar contrato de compraventa</li>
+                  </ul>
+                  <div class="modal-action">
+                    <form method="dialog">
+                      <button class="btn">Cerrar</button>
+                    </form>
+                  </div>
+                </div>
+                <form method="dialog" class="modal-backdrop">
+                  <button>Cerrar</button>
+                </form>
+              </dialog>
+            </div>
+
+            <!-- GALERIA -->
+            <div class="lg:w-1/2 p-4">
+              <div class="grid grid-cols-2 md:grid-cols-2 gap-4">
+                <!-- imagen 1 -->
+                <div class="relative group cursor-pointer">
+                  <img
+                    class="w-full h-40 object-cover rounded-lg"
+                    src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e"
+                  />
+
+                  <!-- <div
+                    class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition rounded-lg flex flex-col items-center justify-center text-white text-center p-2"
+                  >
+                    <h3 class="font-bold">Vista del terreno</h3>
+                    <p class="text-sm">Área frontal</p>
+                  </div> -->
+                </div>
+
+                <!-- imagen 2 -->
+                <div class="relative group cursor-pointer">
+                  <img
+                    class="w-full h-40 object-cover rounded-lg"
+                    src="https://images.unsplash.com/photo-1518623489648-a173ef7824f3"
+                  />
+
+                  <!-- <div
+                    class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition rounded-lg flex flex-col items-center justify-center text-white text-center p-2"
+                  >
+                    <h3 class="font-bold">Acceso</h3>
+                    <p class="text-sm">Entrada principal</p>
+                  </div> -->
+                </div>
+
+                <!-- imagen 3 -->
+                <div class="relative group cursor-pointer">
+                  <img
+                    class="w-full h-40 object-cover rounded-lg"
+                    src="https://images.unsplash.com/photo-1682407186023-12c70a4a35e0"
+                  />
+
+                  <!-- <div
+                    class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition rounded-lg flex flex-col items-center justify-center text-white text-center p-2"
+                  >
+                    <h3 class="font-bold">Vista lateral</h3>
+                    <p class="text-sm">Área amplia</p>
+                  </div> -->
+                </div>
+
+                <!-- imagen 4 -->
+                <div class="relative group cursor-pointer">
+                  <img
+                    class="w-full h-40 object-cover rounded-lg"
+                    src="https://demos.creative-tim.com/material-kit-pro/assets/img/examples/blog5.jpg"
+                  />
+
+                  <!-- <div
+                    class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition rounded-lg flex flex-col items-center justify-center text-white text-center p-2"
+                  >
+                    <h3 class="font-bold">Ubicación</h3>
+                    <p class="text-sm">Zona tranquila</p>
+                  </div> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="px-4">
+          <div class="card lg:card-side bg-base-100 shadow-xl">
+            <!-- INFORMACION -->
+            <div class="card-body lg:w-1/2">
+              <h2 class="card-title text-2xl">Barrio La Pr454aaskjasdlkajsdlkjsalksjalkdsajlkovidencia</h2>
+              <p class="text-[12px] text-blue-800 font-bold">
+                Cobán, Alta Verapaz
+              </p>
+              <div class="grid grid-cols-1 gap-6 mt-4">
+                <div class="gap-1 items-center lg:flex">
+                  <label class="font-medium flex items-center gap-2">
+                    <i class="fa-solid fa-map-pin"></i>
+                    <span class="font-medium">Dirección:</span>
+                  </label>
+                  <span>4ta calle 12-09 zona 1</span>
+                  <div class="tooltip tooltip-right" data-tip="Ver en mapa">
+                    <a
+                      href="https://www.google.com/maps/place/El+Rancho/@14.9255099,-90.0569419,13z/data=!3m1!4b1!4m6!3m5!1s0x8589fde8f2082329:0xcc9504a8655e2b6a!8m2!3d14.9254309!4d-90.0157422!16s%2Fg%2F11khk42w_2?entry=ttu"
+                      target="_blank"
+                    >
+                      <i class="fa-solid fa-map-location"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 gap-6 mt-4">
+                <div class="gap-1 items-center lg:flex">
+                  <label class="font-medium flex items-center gap-2">
+                    <i class="fa-regular fa-bars-sort"></i>
+                    Acceso:
+                  </label>
+                  <p class="text-sm">
+                    Acceso pavimentado, con transporte público cercano
+                  </p>
+                </div>
+
+                <div class="gap-2 items-center lg:flex">
+                  <label class="font-medium flex items-center gap-2">
+                    <i class="fa-solid fa-ruler-combined"></i>
+                    Metros cuadrados:
+                  </label>
+                  <p class="font-bold text-lg">42 m²</p>
+                </div>
+                <div class="items-center gap-1 lg:flex">
+                  <label class="font-medium flex items-center gap-2">
+                    <i class="fa-regular fa-coins"></i>
+                    Precio:
+                  </label>
+                  <span class="text-green-500 font-bold text-xl">Q150,000</span>
+                  <span class="text-[10px] font-bold">(Negociable)</span>
+                </div>
+              </div>
+              <div class="flex items-center gap-3">
+                <a
+                  href="./form.html"
+                  class="btn bg-blue-700 rounded-xl text-white"
+                >
+                  Me interesa
+                </a>
+
+                <div class="tooltip tooltip-right" data-tip="Requisitos">
+                  <button
+                    class="relative text-gray-500 hover:text-gray-700 transition"
+                    aria-label="Requisitos para adquirir este activo"
+                    onclick="document.getElementById('info_modal').showModal()"
+                  >
+                    <i class="fa-sharp fa-solid fa-registered text-xl"></i>
+                  </button>
+                </div>
+              </div>
+              <!-- boton para mostar requisitos -->
+
+              <dialog id="info_modal" class="modal">
+                <div class="modal-box">
+                  <h3 class="font-bold text-lg">
+                    Requisitos para adquirir este activo
+                  </h3>
+                  <ul class="list-disc list-inside mt-4">
+                    <li>Ser mayor de edad</li>
+                    <li>Presentar documento de identidad vigente</li>
+                    <li>Demostrar capacidad financiera para la compra</li>
+                    <li>Firmar contrato de compraventa</li>
+                  </ul>
+                  <div class="modal-action">
+                    <form method="dialog">
+                      <button class="btn">Cerrar</button>
+                    </form>
+                  </div>
+                </div>
+                <form method="dialog" class="modal-backdrop">
+                  <button>Cerrar</button>
+                </form>
+              </dialog>
+            </div>
+
+            <!-- GALERIA -->
+            <div class="lg:w-1/2 p-4">
+              <div class="grid grid-cols-2 md:grid-cols-2 gap-4">
+                <!-- imagen 1 -->
+                <div class="relative group cursor-pointer">
+                  <img
+                    class="w-full h-40 object-cover rounded-lg"
+                    src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e"
+                  />
+
+                  <!-- <div
+                    class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition rounded-lg flex flex-col items-center justify-center text-white text-center p-2"
+                  >
+                    <h3 class="font-bold">Vista del terreno</h3>
+                    <p class="text-sm">Área frontal</p>
+                  </div> -->
+                </div>
+
+                <!-- imagen 2 -->
+                <div class="relative group cursor-pointer">
+                  <img
+                    class="w-full h-40 object-cover rounded-lg"
+                    src="https://images.unsplash.com/photo-1518623489648-a173ef7824f3"
+                  />
+
+                  <!-- <div
+                    class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition rounded-lg flex flex-col items-center justify-center text-white text-center p-2"
+                  >
+                    <h3 class="font-bold">Acceso</h3>
+                    <p class="text-sm">Entrada principal</p>
+                  </div> -->
+                </div>
+
+                <!-- imagen 3 -->
+                <div class="relative group cursor-pointer">
+                  <img
+                    class="w-full h-40 object-cover rounded-lg"
+                    src="https://images.unsplash.com/photo-1682407186023-12c70a4a35e0"
+                  />
+
+                  <!-- <div
+                    class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition rounded-lg flex flex-col items-center justify-center text-white text-center p-2"
+                  >
+                    <h3 class="font-bold">Vista lateral</h3>
+                    <p class="text-sm">Área amplia</p>
+                  </div> -->
+                </div>
+
+                <!-- imagen 4 -->
+                <div class="relative group cursor-pointer">
+                  <img
+                    class="w-full h-40 object-cover rounded-lg"
+                    src="https://demos.creative-tim.com/material-kit-pro/assets/img/examples/blog5.jpg"
+                  />
+
+                  <!-- <div
+                    class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition rounded-lg flex flex-col items-center justify-center text-white text-center p-2"
+                  >
+                    <h3 class="font-bold">Ubicación</h3>
+                    <p class="text-sm">Zona tranquila</p>
+                  </div> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="px-4">
+          <div class="card lg:card-side bg-base-100 shadow-xl">
+            <!-- INFORMACION -->
+            <div class="card-body lg:w-1/2">
+              <h2 class="card-title text-2xl">Barrio La Pr5454215451215151ovidencia</h2>
+              <p class="text-[12px] text-blue-800 font-bold">
+                Cobán, Alta Verapaz
+              </p>
+              <div class="grid grid-cols-1 gap-6 mt-4">
+                <div class="gap-1 items-center lg:flex">
+                  <label class="font-medium flex items-center gap-2">
+                    <i class="fa-solid fa-map-pin"></i>
+                    <span class="font-medium">Dirección:</span>
+                  </label>
+                  <span>4ta calle 12-09 zona 1</span>
+                  <div class="tooltip tooltip-right" data-tip="Ver en mapa">
+                    <a
+                      href="https://www.google.com/maps/place/El+Rancho/@14.9255099,-90.0569419,13z/data=!3m1!4b1!4m6!3m5!1s0x8589fde8f2082329:0xcc9504a8655e2b6a!8m2!3d14.9254309!4d-90.0157422!16s%2Fg%2F11khk42w_2?entry=ttu"
+                      target="_blank"
+                    >
+                      <i class="fa-solid fa-map-location"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 gap-6 mt-4">
+                <div class="gap-1 items-center lg:flex">
+                  <label class="font-medium flex items-center gap-2">
+                    <i class="fa-regular fa-bars-sort"></i>
+                    Acceso:
+                  </label>
+                  <p class="text-sm">
+                    Acceso pavimentado, con transporte público cercano
+                  </p>
+                </div>
+
+                <div class="gap-2 items-center lg:flex">
+                  <label class="font-medium flex items-center gap-2">
+                    <i class="fa-solid fa-ruler-combined"></i>
+                    Metros cuadrados:
+                  </label>
+                  <p class="font-bold text-lg">42 m²</p>
+                </div>
+                <div class="items-center gap-1 lg:flex">
+                  <label class="font-medium flex items-center gap-2">
+                    <i class="fa-regular fa-coins"></i>
+                    Precio:
+                  </label>
+                  <span class="text-green-500 font-bold text-xl">Q150,000</span>
+                  <span class="text-[10px] font-bold">(Negociable)</span>
+                </div>
+              </div>
+              <div class="flex items-center gap-3">
+                <a
+                  href="./form.html"
+                  class="btn bg-blue-700 rounded-xl text-white"
+                >
+                  Me interesa
+                </a>
+
+                <div class="tooltip tooltip-right" data-tip="Requisitos">
+                  <button
+                    class="relative text-gray-500 hover:text-gray-700 transition"
+                    aria-label="Requisitos para adquirir este activo"
+                    onclick="document.getElementById('info_modal').showModal()"
+                  >
+                    <i class="fa-sharp fa-solid fa-registered text-xl"></i>
+                  </button>
+                </div>
+              </div>
+              <!-- boton para mostar requisitos -->
+
+              <dialog id="info_modal" class="modal">
+                <div class="modal-box">
+                  <h3 class="font-bold text-lg">
+                    Requisitos para adquirir este activo
+                  </h3>
+                  <ul class="list-disc list-inside mt-4">
+                    <li>Ser mayor de edad</li>
+                    <li>Presentar documento de identidad vigente</li>
+                    <li>Demostrar capacidad financiera para la compra</li>
+                    <li>Firmar contrato de compraventa</li>
+                  </ul>
+                  <div class="modal-action">
+                    <form method="dialog">
+                      <button class="btn">Cerrar</button>
+                    </form>
+                  </div>
+                </div>
+                <form method="dialog" class="modal-backdrop">
+                  <button>Cerrar</button>
+                </form>
+              </dialog>
+            </div>
+
+            <!-- GALERIA -->
+            <div class="lg:w-1/2 p-4">
+              <div class="grid grid-cols-2 md:grid-cols-2 gap-4">
+                <!-- imagen 1 -->
+                <div class="relative group cursor-pointer">
+                  <img
+                    class="w-full h-40 object-cover rounded-lg"
+                    src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e"
+                  />
+
+                  <!-- <div
+                    class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition rounded-lg flex flex-col items-center justify-center text-white text-center p-2"
+                  >
+                    <h3 class="font-bold">Vista del terreno</h3>
+                    <p class="text-sm">Área frontal</p>
+                  </div> -->
+                </div>
+
+                <!-- imagen 2 -->
+                <div class="relative group cursor-pointer">
+                  <img
+                    class="w-full h-40 object-cover rounded-lg"
+                    src="https://images.unsplash.com/photo-1518623489648-a173ef7824f3"
+                  />
+
+                  <!-- <div
+                    class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition rounded-lg flex flex-col items-center justify-center text-white text-center p-2"
+                  >
+                    <h3 class="font-bold">Acceso</h3>
+                    <p class="text-sm">Entrada principal</p>
+                  </div> -->
+                </div>
+
+                <!-- imagen 3 -->
+                <div class="relative group cursor-pointer">
+                  <img
+                    class="w-full h-40 object-cover rounded-lg"
+                    src="https://images.unsplash.com/photo-1682407186023-12c70a4a35e0"
+                  />
+
+                  <!-- <div
+                    class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition rounded-lg flex flex-col items-center justify-center text-white text-center p-2"
+                  >
+                    <h3 class="font-bold">Vista lateral</h3>
+                    <p class="text-sm">Área amplia</p>
+                  </div> -->
+                </div>
+
+                <!-- imagen 4 -->
+                <div class="relative group cursor-pointer">
+                  <img
+                    class="w-full h-40 object-cover rounded-lg"
+                    src="https://demos.creative-tim.com/material-kit-pro/assets/img/examples/blog5.jpg"
+                  />
+
+                  <!-- <div
+                    class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition rounded-lg flex flex-col items-center justify-center text-white text-center p-2"
+                  >
+                    <h3 class="font-bold">Ubicación</h3>
+                    <p class="text-sm">Zona tranquila</p>
+                  </div> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="px-4">
+          <div class="card lg:card-side bg-base-100 shadow-xl">
+            <!-- INFORMACION -->
+            <div class="card-body lg:w-1/2">
+              <h2 class="card-title text-2xl">Barrio La Prajksldjaslkjsdlkjalskdjsalkjdlksajdlksjalkdjsalkjasd
+                askdjsalkjdlskja
+                ovidencia</h2>
+              <p class="text-[12px] text-blue-800 font-bold">
+                Cobán, Alta Verapaz
+              </p>
+              <div class="grid grid-cols-1 gap-6 mt-4">
+                <div class="gap-1 items-center lg:flex">
+                  <label class="font-medium flex items-center gap-2">
+                    <i class="fa-solid fa-map-pin"></i>
+                    <span class="font-medium">Dirección:</span>
+                  </label>
+                  <span>4ta calle 12-09 zona 1</span>
+                  <div class="tooltip tooltip-right" data-tip="Ver en mapa">
+                    <a
+                      href="https://www.google.com/maps/place/El+Rancho/@14.9255099,-90.0569419,13z/data=!3m1!4b1!4m6!3m5!1s0x8589fde8f2082329:0xcc9504a8655e2b6a!8m2!3d14.9254309!4d-90.0157422!16s%2Fg%2F11khk42w_2?entry=ttu"
+                      target="_blank"
+                    >
+                      <i class="fa-solid fa-map-location"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 gap-6 mt-4">
+                <div class="gap-1 items-center lg:flex">
+                  <label class="font-medium flex items-center gap-2">
+                    <i class="fa-regular fa-bars-sort"></i>
+                    Acceso:
+                  </label>
+                  <p class="text-sm">
+                    Acceso pavimentado, con transporte público cercano
+                  </p>
+                </div>
+
+                <div class="gap-2 items-center lg:flex">
+                  <label class="font-medium flex items-center gap-2">
+                    <i class="fa-solid fa-ruler-combined"></i>
+                    Metros cuadrados:
+                  </label>
+                  <p class="font-bold text-lg">42 m²</p>
+                </div>
+                <div class="items-center gap-1 lg:flex">
+                  <label class="font-medium flex items-center gap-2">
+                    <i class="fa-regular fa-coins"></i>
+                    Precio:
+                  </label>
+                  <span class="text-green-500 font-bold text-xl">Q150,000</span>
+                  <span class="text-[10px] font-bold">(Negociable)</span>
+                </div>
+              </div>
+              <div class="flex items-center gap-3">
+                <a
+                  href="./form.html"
+                  class="btn bg-blue-700 rounded-xl text-white"
+                >
+                  Me interesa
+                </a>
+
+                <div class="tooltip tooltip-right" data-tip="Requisitos">
+                  <button
+                    class="relative text-gray-500 hover:text-gray-700 transition"
+                    aria-label="Requisitos para adquirir este activo"
+                    onclick="document.getElementById('info_modal').showModal()"
+                  >
+                    <i class="fa-sharp fa-solid fa-registered text-xl"></i>
+                  </button>
+                </div>
+              </div>
+              <!-- boton para mostar requisitos -->
+
+              <dialog id="info_modal" class="modal">
+                <div class="modal-box">
+                  <h3 class="font-bold text-lg">
+                    Requisitos para adquirir este activo
+                  </h3>
+                  <ul class="list-disc list-inside mt-4">
+                    <li>Ser mayor de edad</li>
+                    <li>Presentar documento de identidad vigente</li>
+                    <li>Demostrar capacidad financiera para la compra</li>
+                    <li>Firmar contrato de compraventa</li>
+                  </ul>
+                  <div class="modal-action">
+                    <form method="dialog">
+                      <button class="btn">Cerrar</button>
+                    </form>
+                  </div>
+                </div>
+                <form method="dialog" class="modal-backdrop">
+                  <button>Cerrar</button>
+                </form>
+              </dialog>
+            </div>
+
+            <!-- GALERIA -->
+            <div class="lg:w-1/2 p-4">
+              <div class="grid grid-cols-2 md:grid-cols-2 gap-4">
+                <!-- imagen 1 -->
+                <div class="relative group cursor-pointer">
+                  <img
+                    class="w-full h-40 object-cover rounded-lg"
+                    src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e"
+                  />
+
+                  <!-- <div
+                    class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition rounded-lg flex flex-col items-center justify-center text-white text-center p-2"
+                  >
+                    <h3 class="font-bold">Vista del terreno</h3>
+                    <p class="text-sm">Área frontal</p>
+                  </div> -->
+                </div>
+
+                <!-- imagen 2 -->
+                <div class="relative group cursor-pointer">
+                  <img
+                    class="w-full h-40 object-cover rounded-lg"
+                    src="https://images.unsplash.com/photo-1518623489648-a173ef7824f3"
+                  />
+
+                  <!-- <div
+                    class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition rounded-lg flex flex-col items-center justify-center text-white text-center p-2"
+                  >
+                    <h3 class="font-bold">Acceso</h3>
+                    <p class="text-sm">Entrada principal</p>
+                  </div> -->
+                </div>
+
+                <!-- imagen 3 -->
+                <div class="relative group cursor-pointer">
+                  <img
+                    class="w-full h-40 object-cover rounded-lg"
+                    src="https://images.unsplash.com/photo-1682407186023-12c70a4a35e0"
+                  />
+
+                  <!-- <div
+                    class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition rounded-lg flex flex-col items-center justify-center text-white text-center p-2"
+                  >
+                    <h3 class="font-bold">Vista lateral</h3>
+                    <p class="text-sm">Área amplia</p>
+                  </div> -->
+                </div>
+
+                <!-- imagen 4 -->
+                <div class="relative group cursor-pointer">
+                  <img
+                    class="w-full h-40 object-cover rounded-lg"
+                    src="https://demos.creative-tim.com/material-kit-pro/assets/img/examples/blog5.jpg"
+                  />
+
+                  <!-- <div
+                    class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition rounded-lg flex flex-col items-center justify-center text-white text-center p-2"
+                  >
+                    <h3 class="font-bold">Ubicación</h3>
+                    <p class="text-sm">Zona tranquila</p>
+                  </div> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="px-4">
+          <div class="card lg:card-side bg-base-100 shadow-xl">
+            <!-- INFORMACION -->
+            <div class="card-body lg:w-1/2">
+              <h2 class="card-title text-2xl">Barrio La Providencia</h2>
+              <p class="text-[12px] text-blue-800 font-bold">
+                Cobán, Alta Verapaz
+              </p>
+              <div class="grid grid-cols-1 gap-6 mt-4">
+                <div class="gap-1 items-center lg:flex">
+                  <label class="font-medium flex items-center gap-2">
+                    <i class="fa-solid fa-map-pin"></i>
+                    <span class="font-medium">Dirección:</span>
+                  </label>
+                  <span>4ta calle 12-09 zona 1</span>
+                  <div class="tooltip tooltip-right" data-tip="Ver en mapa">
+                    <a
+                      href="https://www.google.com/maps/place/El+Rancho/@14.9255099,-90.0569419,13z/data=!3m1!4b1!4m6!3m5!1s0x8589fde8f2082329:0xcc9504a8655e2b6a!8m2!3d14.9254309!4d-90.0157422!16s%2Fg%2F11khk42w_2?entry=ttu"
+                      target="_blank"
+                    >
+                      <i class="fa-solid fa-map-location"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 gap-6 mt-4">
+                <div class="gap-1 items-center lg:flex">
+                  <label class="font-medium flex items-center gap-2">
+                    <i class="fa-regular fa-bars-sort"></i>
+                    Acceso:
+                  </label>
+                  <p class="text-sm">
+                    Acceso pavimentado, con transporte público cercano
+                  </p>
+                </div>
+
+                <div class="gap-2 items-center lg:flex">
+                  <label class="font-medium flex items-center gap-2">
+                    <i class="fa-solid fa-ruler-combined"></i>
+                    Metros cuadrados:
+                  </label>
+                  <p class="font-bold text-lg">42 m²</p>
+                </div>
+                <div class="items-center gap-1 lg:flex">
+                  <label class="font-medium flex items-center gap-2">
+                    <i class="fa-regular fa-coins"></i>
+                    Precio:
+                  </label>
+                  <span class="text-green-500 font-bold text-xl">Q150,000</span>
+                  <span class="text-[10px] font-bold">(Negociable)</span>
+                </div>
+              </div>
+              <div class="flex items-center gap-3">
+                <a
+                  href="./form.html"
+                  class="btn bg-blue-700 rounded-xl text-white"
+                >
+                  Me interesa
+                </a>
+
+                <div class="tooltip tooltip-right" data-tip="Requisitos">
+                  <button
+                    class="relative text-gray-500 hover:text-gray-700 transition"
+                    aria-label="Requisitos para adquirir este activo"
+                    onclick="document.getElementById('info_modal').showModal()"
+                  >
+                    <i class="fa-sharp fa-solid fa-registered text-xl"></i>
+                  </button>
+                </div>
+              </div>
+              <!-- boton para mostar requisitos -->
+
+              <dialog id="info_modal" class="modal">
+                <div class="modal-box">
+                  <h3 class="font-bold text-lg">
+                    Requisitos para adquirir este activo
+                  </h3>
+                  <ul class="list-disc list-inside mt-4">
+                    <li>Ser mayor de edad</li>
+                    <li>Presentar documento de identidad vigente</li>
+                    <li>Demostrar capacidad financiera para la compra</li>
+                    <li>Firmar contrato de compraventa</li>
+                  </ul>
+                  <div class="modal-action">
+                    <form method="dialog">
+                      <button class="btn">Cerrar</button>
+                    </form>
+                  </div>
+                </div>
+                <form method="dialog" class="modal-backdrop">
+                  <button>Cerrar</button>
+                </form>
+              </dialog>
+            </div>
+
+            <!-- GALERIA -->
+            <div class="lg:w-1/2 p-4">
+              <div class="grid grid-cols-2 md:grid-cols-2 gap-4">
+                <!-- imagen 1 -->
+                <div class="relative group cursor-pointer">
+                  <img
+                    class="w-full h-40 object-cover rounded-lg"
+                    src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e"
+                  />
+
+                  <!-- <div
+                    class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition rounded-lg flex flex-col items-center justify-center text-white text-center p-2"
+                  >
+                    <h3 class="font-bold">Vista del terreno</h3>
+                    <p class="text-sm">Área frontal</p>
+                  </div> -->
+                </div>
+
+                <!-- imagen 2 -->
+                <div class="relative group cursor-pointer">
+                  <img
+                    class="w-full h-40 object-cover rounded-lg"
+                    src="https://images.unsplash.com/photo-1518623489648-a173ef7824f3"
+                  />
+
+                  <!-- <div
+                    class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition rounded-lg flex flex-col items-center justify-center text-white text-center p-2"
+                  >
+                    <h3 class="font-bold">Acceso</h3>
+                    <p class="text-sm">Entrada principal</p>
+                  </div> -->
+                </div>
+
+                <!-- imagen 3 -->
+                <div class="relative group cursor-pointer">
+                  <img
+                    class="w-full h-40 object-cover rounded-lg"
+                    src="https://images.unsplash.com/photo-1682407186023-12c70a4a35e0"
+                  />
+
+                  <!-- <div
+                    class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition rounded-lg flex flex-col items-center justify-center text-white text-center p-2"
+                  >
+                    <h3 class="font-bold">Vista lateral</h3>
+                    <p class="text-sm">Área amplia</p>
+                  </div> -->
+                </div>
+
+                <!-- imagen 4 -->
+                <div class="relative group cursor-pointer">
+                  <img
+                    class="w-full h-40 object-cover rounded-lg"
+                    src="https://demos.creative-tim.com/material-kit-pro/assets/img/examples/blog5.jpg"
+                  />
+
+                  <!-- <div
+                    class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition rounded-lg flex flex-col items-center justify-center text-white text-center p-2"
+                  >
+                    <h3 class="font-bold">Ubicación</h3>
+                    <p class="text-sm">Zona tranquila</p>
+                  </div> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
